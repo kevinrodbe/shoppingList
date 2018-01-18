@@ -1,0 +1,15 @@
+// tpl
+import { Injectable } from '@angular/core';
+import {Http} from "@angular/http";
+import {Observable} from "rxjs/Observable";
+
+@Injectable()
+export class APPProcService {
+  constructor(private _http:Http) { }
+
+  {{#mycon}}
+    getData() {
+      return this._http.get("http://localhost:3000/books").map(r => <Book[]>r.json());
+    }
+  {{/mycon}}
+}
